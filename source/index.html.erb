@@ -1,10 +1,227 @@
----
-title: Le Wagon Middleman boilerplate
----
-
-<div class="welcome text-center padded">
-  <h1>Welcome to Middleman</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/background.jpg');">
+  <div class="banner-content">
+    <h1>Some Stuff</h1>
+    <p>Very cool stuff, useful and smart</p>
+    <a class="btn btn-primary btn-lg">GET IT</a>
+  </div>
 </div>
+
+<!-- Your features code -->
+<div class="container text-center padded features">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="images/globe.png" alt="">
+      <h2>Discover the world</h2>
+      <p>The earth is your new home.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="images/dollar.png" alt="">
+      <h2>Pay online</h2>
+      <p>No cash issues anymore.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="images/beer.png" alt="">
+      <h2>Meet people</h2>
+      <p>Discover new culture and lifestyle.</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="images/heart.png" alt="">
+      <h2>Share and love</h2>
+      <p>Join a community you will love.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Your cards code -->
+
+<div class="wrapper-grey padded">
+  <div class="container">
+    <h2 class="text-center">Your next trip</h2>
+    <div class="row">
+      <% data.team.each do |member, infos| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+          <!-- <%= image_tag infos.picture, class: "img-thumbnail" %> -->
+          <div class="card-category"><%= infos.city %></div>
+          <div class="card-description">
+            <h2><%= member.capitalize %></h2>
+            <p><%= infos.role %></p>
+          </div>
+          <%= image_tag infos.personal_picture, class: "card-user avatar avatar-large" %>
+          <a class="card-link" href="#"></a>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Your newsletter code -->
+<div class="text-center padded" id="newsletter">
+  <h2>Get news from us</h2>
+  <p>Leave us your mail and get news from us</p>
+  <form class="form-inline">
+    <input placeholder="bob@gmail.com" class="form-control" type="email">
+    <input value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary" type="submit">
+  </form>
+</div>
+
+<!-- Your map code -->
+
+<div id="map" style="width: 100%; height: 400px;"></div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script type="text/javascript">
+  var myLatlng = new google.maps.LatLng(48.852937,2.364178);
+
+  var myOptions = {
+    zoom: 16,
+    center: myLatlng,
+    scrollwheel: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    styles: [    {
+      "elementType": "geometry",
+      "stylers": [
+      {
+        "hue": "#ff4400"
+      },
+      {
+        "saturation": -68
+      },
+      {
+        "lightness": -4
+      },
+      {
+        "gamma": 0.72
+      }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels.icon"
+    },
+    {
+      "featureType": "landscape.man_made",
+      "elementType": "geometry",
+      "stylers": [
+      {
+        "hue": "#0077ff"
+      },
+      {
+        "gamma": 3.1
+      }
+      ]
+    },
+    {
+      "featureType": "water",
+      "stylers": [
+      {
+        "hue": "#00ccff"
+      },
+      {
+        "gamma": 0.44
+      },
+      {
+        "saturation": -33
+      }
+      ]
+    },
+    {
+      "featureType": "poi.park",
+      "stylers": [
+      {
+        "hue": "#44ff00"
+      },
+      {
+        "saturation": -23
+      }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "labels.text.fill",
+      "stylers": [
+      {
+        "hue": "#007fff"
+      },
+      {
+        "gamma": 0.77
+      },
+      {
+        "saturation": 65
+      },
+      {
+        "lightness": 99
+      }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+      {
+        "gamma": 0.11
+      },
+      {
+        "weight": 5.6
+      },
+      {
+        "saturation": 99
+      },
+      {
+        "hue": "#0091ff"
+      },
+      {
+        "lightness": -86
+      }
+      ]
+    },
+    {
+      "featureType": "transit.line",
+      "elementType": "geometry",
+      "stylers": [
+      {
+        "lightness": -48
+      },
+      {
+        "hue": "#ff5e00"
+      },
+      {
+        "gamma": 1.2
+      },
+      {
+        "saturation": -23
+      }
+      ]
+    },
+    {
+      "featureType": "transit",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+      {
+        "saturation": -64
+      },
+      {
+        "hue": "#ff9100"
+      },
+      {
+        "lightness": 16
+      },
+      {
+        "gamma": 0.47
+      },
+      {
+        "weight": 2.7
+      }
+      ]
+    }] // TODO: replace [] by array from https://snazzymaps.com/
+  };
+
+  var map = new google.maps.Map(document.getElementById('map'), myOptions);
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+    title: "You are here!"
+  });
+</script>

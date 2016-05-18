@@ -1,0 +1,15 @@
+walter:
+  personal_picture: anne.jpg
+  role: CEO
+  city: Nieuwegein
+  city_picture: card-paris.jpg
+jay:
+  personal_picture: romain.jpeg
+  role: CFO
+  city: Amsterdam
+  city_picture: card-london.jpeg
+RJ:
+  personal_picture: seb.jpg
+  role: CFO
+  city: Amsterdam
+  city_picture: card-brussels.jpeg
