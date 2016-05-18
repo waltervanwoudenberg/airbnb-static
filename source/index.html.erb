@@ -38,17 +38,16 @@
   <div class="container">
     <h2 class="text-center">Your next trip</h2>
     <div class="row">
-      <% data.team.each do |member, infos| %>
+      <% data.flats.each do |owner, flat| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
-          <!-- <%= image_tag infos.picture, class: "img-thumbnail" %> -->
-          <div class="card-category"><%= infos.city %></div>
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path flat.picture %>');">
+          <div class="card-category"><%= flat.city %></div>
           <div class="card-description">
-            <h2><%= member.capitalize %></h2>
-            <p><%= infos.role %></p>
+            <h2><%= flat.name %></h2>
+            <p><%= flat.summary %></p>
           </div>
-          <%= image_tag infos.personal_picture, class: "card-user avatar avatar-large" %>
-          <a class="card-link" href="#"></a>
+          <%= image_tag flat.owner_picture, class: "card-user avatar avatar-large" %>
+          <%= link_to "flats", "flats/#{owner}.html", class: "card-link" %>
         </div>
       </div>
       <% end %>

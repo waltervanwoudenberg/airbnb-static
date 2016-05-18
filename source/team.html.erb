@@ -1,10 +1,10 @@
 <div class="container text-center padded">
   <h1>Our team</h1>
     <ul class="list-inline text-center">
-      <% data.team.each do |member, infos| %>
+      <% data.flats.each do |owner, flat| %>
         <li>
-          <%= image_tag infos.picture, class: "img-circle" %>
-          <h3><%= member.capitalize %></h3>
+          <%= image_tag flat.owner_picture, class: "img-circle", width: "200px" %>
+          <h3><%= owner.capitalize %></h3>
         </li>
       <% end %>
     </ul>
